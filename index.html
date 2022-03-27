@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - NurulQuran Kids Ramadan 2022</title>
+  <style>
+ @import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700");
+
+* {
+  font-family: Lato, sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #EEEEEE;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 50px 0;
+}
+
+.wrapper {
+  width: 60%;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.container {
+  background-color: white;
+  color: black;
+  border-radius: 20px;
+  box-shadow: 0 5px 10px 0 rgb(0,0,0,0.25);
+  margin: 20px 0;
+}
+
+.question {
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 20px 80px 20px 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.question::after {
+  content: "\002B";
+  font-size: 2.2rem;
+  position: absolute;
+  right: 20px;
+  transition: 0.2s;
+}
+
+.question.active::after {
+  transform: rotate(45deg);
+}
+
+.answercont {
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.answer {
+  padding: 0 20px 20px;
+  line-height: 1.5rem;
+}
+
+.question.active + .answercont {
+}
+
+@media screen and (max-width: 790px){
+  html {
+    font-size: 14px;
+  }
+  .wrapper {
+  width: 80%;
+}
+}
+  </style>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<h1>Select Currency</h1>
+
+<div class="wrapper">
+  
+  <div class="container">
+    <div class="question">
+      GBP for Europe and UK
+    </div>
+    <div class="answercont">
+      <div class="answer">
+<div id="mf_placeholder" 
+     data-formurl="//safe.nurulquran.com/kaatib/embed.php?id=12588" 
+     data-formheight="1255"  
+     data-formtitle="Ramadan Kids 2022 Fee UK Payment"  
+     data-paddingbottom="10">
+</div>
+<script>
+	(function(f,o,r,m){
+		r=f.createElement('script');r.async=1;r.src=o+'js/mf.js';
+		m=f.getElementById('mf_placeholder'); m.parentNode.insertBefore(r, m);
+	})(document,'//safe.nurulquran.com/kaatib/');
+</script>
+      </div>
+    </div>
+  </div>
+  
+    <div class="container">
+    <div class="question">
+      USA Dollars
+    </div>
+    <div class="answercont">
+      <div class="answer">
+        <div id="mf_placeholder" 
+     data-formurl="//safe.nurulquran.com/kaatib/embed.php?id=15550" 
+     data-formheight="1184"  
+     data-formtitle="Ramadan Kids 2022 Fee USA"  
+     data-paddingbottom="10">
+</div>
+<script>
+	(function(f,o,r,m){
+		r=f.createElement('script');r.async=1;r.src=o+'js/mf.js';
+		m=f.getElementById('mf_placeholder'); m.parentNode.insertBefore(r, m);
+	})(document,'//safe.nurulquran.com/kaatib/');
+</script>
+      </div>
+    </div>
+  </div>
+  
+      <div class="container">
+    <div class="question">
+      Middle East
+    </div>
+    <div class="answercont">
+      <div class="answer">
+        <div id="mf_placeholder" 
+     data-formurl="//safe.nurulquran.com/kaatib/embed.php?id=15996" 
+     data-formheight="1167"  
+     data-formtitle="Ramadan Kids 2022 Fees Middle East"  
+     data-paddingbottom="10">
+</div>
+<script>
+	(function(f,o,r,m){
+		r=f.createElement('script');r.async=1;r.src=o+'js/mf.js';
+		m=f.getElementById('mf_placeholder'); m.parentNode.insertBefore(r, m);
+	})(document,'//safe.nurulquran.com/kaatib/');
+</script>
+      </div>
+    </div>
+  </div>
+ 
+  <div class="container">
+    <div class="question">
+ Pakistan India
+    </div>
+    <div class="answercont">
+      <div class="answer">
+  Check your email for bank details.
+      </div>
+    </div>
+  </div>
+  
+ 
+    </div>
+  </div>
+  
+</div>
+<!-- partial -->
+  <script>
+let question = document.querySelectorAll(".question");
+
+question.forEach(question => {
+  question.addEventListener("click", event => {
+    const active = document.querySelector(".question.active");
+    if(active && active !== question ) {
+      active.classList.toggle("active");
+      active.nextElementSibling.style.maxHeight = 0;
+    }
+    question.classList.toggle("active");
+    const answer = question.nextElementSibling;
+    if(question.classList.contains("active")){
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    } else {
+      answer.style.maxHeight = 0;
+    }
+  })
+})
+
+</script>
+
+</body>
+</html>
